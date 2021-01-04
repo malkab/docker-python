@@ -1,0 +1,7 @@
+name: docker-python
+root: /home/git/docker-public/docker-python/
+
+windows:
+  - docker-python: >
+      sleep 0.1 ;
+      clear
