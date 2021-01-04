@@ -39,7 +39,6 @@ debconf-set-selections < /keyboard_selections.conf
 
 apt-get install -y \
   apt-utils \
-  ipython3 \
   vim \
   mlocate
 
@@ -57,9 +56,12 @@ locale-gen
 
 ldconfig
 
+# Lastest IPython has a bug in autocompletion, so installing last known working
+# one
 pip install \
-  ipython \
-  virtualenv
+  virtualenv \
+  readline \
+  ipython==7.1.1
 
 # Some ln -s
 ln -s /usr/bin/ipython3 /usr/bin/ipython
