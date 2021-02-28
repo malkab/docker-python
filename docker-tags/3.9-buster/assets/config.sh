@@ -61,7 +61,7 @@ ldconfig
 pip install \
   virtualenv \
   readline \
-  ipython==7.1.1
+  ipython
 
 # Some ln -s
 ln -s /usr/bin/ipython3 /usr/bin/ipython
