@@ -1,5 +1,5 @@
 name: docker-python
-root: /home/git/docker-public/docker-python/
+root: /home/git/docker-public/docker-public-python/
 
 windows:
   - docker-python: >
