@@ -9,3 +9,5 @@ This adds to the official image:
 - virtualenv
 
 Using **virtualenv** to have NPM-like environments definitions. To create an environment, run **virtualenv name_of_env**, and to activate it, **. name_of_env/bin/activate**. This way PIP installed packages are local to the source tree. Installed packages should be properly installed in global PIP in production images.
+
+For a more feature-rich Python development setup for data science check the **malkab/docker-grass** image.
