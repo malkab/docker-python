@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------
 #
-# Push the image to DockerHub, public.
+# Builds the image.
 #
 # -----------------------------------------------------------------
-docker push malkab/python:3.9-buster
+docker build --force-rm -t malkab/python:3.11-bullseye .

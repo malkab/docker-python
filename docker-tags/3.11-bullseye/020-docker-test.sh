@@ -7,4 +7,4 @@ docker run -ti --rm \
     --user 1000:1000 \
     -v $(pwd):$(pwd) \
     --workdir $(pwd) \
-    malkab/python:3.9-buster
+    malkab/python:3.11-bullseye

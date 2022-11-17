@@ -5,4 +5,4 @@
 # Push the image to DockerHub, public.
 #
 # -----------------------------------------------------------------
-docker push malkab/python:3.9-buster
+docker push malkab/python:3.11-bullseye
