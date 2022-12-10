@@ -5,13 +5,16 @@ LABEL email="jp.perez.alcantara@gmail.com"
 
 WORKDIR /
 
-ADD assets/keyboard_selections.conf /
 ADD assets/dot.bashrc /root/.bashrc
 ADD assets/dot.vimrc /root/.vimrc
 ADD assets/dot.bashrc /etc/skel/.bashrc
 ADD assets/dot.vimrc /etc/skel/.vimrc
-ADD assets/config.sh /
+ADD assets/sudoers /
 
-RUN chmod 755 -R /usr/bin/ ; chmod 755 /config.sh ; /config.sh ; rm /config.sh
+# Copy and run setup
+ADD assets/configure.sh /
+RUN chmod 777 /configure.sh ; \
+  /configure.sh ; \
+  rm /configure.sh
 
 ENTRYPOINT [ "/bin/bash" ]

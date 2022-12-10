@@ -19,6 +19,12 @@ imap jj <Esc>
 :set timeoutlen=300
 
 
+" Column mark
+
+set colorcolumn=72
+
+
+
 " Line wrap
 
 :set wrap
@@ -37,12 +43,6 @@ imap jj <Esc>
 
 :set t_Co=256
 :syntax enable
-
-
-
-" MacOS system clipboard
-
-set clipboard=unnamed
 
 
 " Transparent editing of gpg encrypted files.
@@ -100,9 +100,3 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <F2>g :echo "Test 34"
-
-
-
-" Column mark
-
-set colorcolumn=72
