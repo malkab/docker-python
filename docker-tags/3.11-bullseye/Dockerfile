@@ -1,4 +1,4 @@
-FROM python:3.11-bullseye
+FROM python:3.11-bullseye as build
 
 LABEL author="Juan Pedro Perez"
 LABEL email="jp.perez.alcantara@gmail.com"
@@ -13,8 +13,14 @@ ADD assets/sudoers /
 
 # Copy and run setup
 ADD assets/configure.sh /
+ADD assets/mlkctxt /mlkctxt
+ADD assets/node-18.14.0/node /node
 RUN chmod 777 /configure.sh ; \
   /configure.sh ; \
   rm /configure.sh
+
+FROM scratch
+
+COPY --from=build / /
 
 ENTRYPOINT [ "/bin/bash" ]

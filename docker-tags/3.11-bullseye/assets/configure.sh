@@ -59,7 +59,8 @@ apt-get install -y -f \
   x11-apps \
   mlocate \
   p7zip-full \
-  sudo
+  sudo \
+  inotify-tools
 
 apt-get -y upgrade
 
@@ -80,7 +81,8 @@ pip install \
   virtualenv \
   readline \
   pyinstaller \
-  ipython
+  ipython \
+  pytest
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
@@ -93,6 +95,26 @@ ldconfig
 
 # Some ln -s
 ln -s /usr/bin/ipython3 /usr/bin/ipython
+
+echo
+echo ---------------------------
+echo Install mlkctxt
+echo ---------------------------
+echo
+cd /mlkctxt
+./install.sh
+
+echo
+echo ---------------------------
+echo Install Node.js
+echo ---------------------------
+echo
+cd /node
+cp -R * /usr/local/
+
+# Clean up
+rm -Rf /node
+rm -Rf /mlkctxt
 
 echo
 echo ---------------------------
