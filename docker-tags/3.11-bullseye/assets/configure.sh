@@ -82,7 +82,8 @@ pip install \
   readline \
   pyinstaller \
   ipython \
-  pytest
+  pytest \
+  pytest-watch
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
