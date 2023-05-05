@@ -53,14 +53,16 @@ echo
 
 apt-get install -y -f \
   apt-utils \
-  less \
+  cmake \
   curl \
-  vim \
-  x11-apps \
+  gdb \
+  inotify-tools \
+  less \
   mlocate \
   p7zip-full \
   sudo \
-  inotify-tools
+  vim \
+  x11-apps
 
 apt-get -y upgrade
 
@@ -78,12 +80,12 @@ echo
 pip install --upgrade pip
 
 pip install \
-  virtualenv \
-  readline \
-  pyinstaller \
   ipython \
+  pyinstaller \
   pytest \
-  pytest-watch
+  pytest-watch \
+  readline \
+  virtualenv
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
