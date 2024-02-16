@@ -55,6 +55,7 @@ apt-get install -y -f \
   apt-utils \
   cmake \
   curl \
+  git \
   gdb \
   inotify-tools \
   less \
@@ -84,8 +85,16 @@ pip install \
   pyinstaller \
   pytest \
   pytest-watch \
-  readline \
-  virtualenv
+  build \
+  readline
+
+echo
+echo ---------------------------
+echo pipx install
+echo ---------------------------
+echo
+python3 -m pip install pipx
+python3 -m pipx ensurepath
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
