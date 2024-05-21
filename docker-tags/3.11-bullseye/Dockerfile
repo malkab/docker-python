@@ -19,8 +19,4 @@ RUN chmod 777 /configure.sh ; \
   /configure.sh ; \
   rm /configure.sh
 
-FROM scratch
-
-COPY --from=build / /
-
 ENTRYPOINT [ "/bin/bash" ]
