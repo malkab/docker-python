@@ -1,4 +1,4 @@
-FROM python:3.11-bullseye as build
+FROM python:3.11-bullseye
 
 LABEL author="Juan Pedro Perez"
 LABEL email="jp.perez.alcantara@gmail.com"
@@ -15,6 +15,7 @@ ADD assets/sudoers /
 ADD assets/configure.sh /
 ADD assets/mlkctxt /mlkctxt
 ADD assets/node-18.14.0/node /node
+ADD assets/fzf /usr/local/bin/
 RUN chmod 777 /configure.sh ; \
   /configure.sh ; \
   rm /configure.sh

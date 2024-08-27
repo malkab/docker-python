@@ -11,4 +11,4 @@ tar -xf node.tar.xz
 mv node-v18.14.0-linux-x64 node
 cd ../..
 
-docker build --force-rm -t malkab/python:3.11-bullseye .
+docker build --no-cache --force-rm -t malkab/python:3.11-bullseye .

@@ -19,15 +19,6 @@ Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 # User privilege specification
 root      ALL=(ALL) NOPASSWD: ALL
 user1000  ALL=(ALL) NOPASSWD: ALL
-user1001  ALL=(ALL) NOPASSWD: ALL
-user1002  ALL=(ALL) NOPASSWD: ALL
-user1003  ALL=(ALL) NOPASSWD: ALL
-user1004  ALL=(ALL) NOPASSWD: ALL
-user500   ALL=(ALL) NOPASSWD: ALL
-user501   ALL=(ALL) NOPASSWD: ALL
-user502   ALL=(ALL) NOPASSWD: ALL
-user503   ALL=(ALL) NOPASSWD: ALL
-user504   ALL=(ALL) NOPASSWD: ALL
 
 # Allow members of group sudo to execute any command
 %sudo     ALL=(ALL) NOPASSWD: ALL

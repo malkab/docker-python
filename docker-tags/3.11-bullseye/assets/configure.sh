@@ -63,7 +63,9 @@ apt-get install -y -f \
   p7zip-full \
   sudo \
   vim \
-  x11-apps
+  x11-apps \
+  mkdocs \
+  bat
 
 apt-get -y upgrade
 
@@ -86,7 +88,10 @@ pip install \
   pytest \
   pytest-watch \
   build \
-  readline
+  readline \
+  mkdocstrings \
+  mkdocstrings-python \
+  mkdocs-material
 
 echo
 echo ---------------------------
