@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Runs a Docker Python session
-
-mlkdckpythonrun -q \
-  -u 1000:1000 \
-  -w $(pwd) \
-  -v $(pwd):$(pwd) \
-  -i docker_python_test \
-  3.9-buster
+docker run -ti --rm \
+    --name python_test \
+    --hostname python_test \
+    --user 1000:1000 \
+    -v $(pwd):$(pwd) \
+    --workdir $(pwd) \
+    malkab/python:3.9-buster
