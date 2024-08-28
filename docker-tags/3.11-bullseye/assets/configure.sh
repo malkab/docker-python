@@ -112,6 +112,7 @@ ldconfig
 
 # Some ln -s
 ln -s /usr/bin/ipython3 /usr/bin/ipython
+ln -s /usr/bin/batcat /usr/bin/bat
 
 echo
 echo ---------------------------
