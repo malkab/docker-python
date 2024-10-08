@@ -20,6 +20,9 @@ RUN chmod 777 /setup_dev_basics.sh ; \
 
 RUN apt-get install -y -f mkdocs
 
+RUN mkdir /home/git && \
+    chown -R vscode:vscode /home/git
+
 USER vscode
 
 RUN python -m pip install --upgrade --break-system-packages pip
