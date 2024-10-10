@@ -25,9 +25,9 @@ RUN mkdir /home/git && \
 
 USER vscode
 
-RUN python -m pip install --upgrade --break-system-packages pip
+RUN pip install --upgrade pip
 
-RUN python -m pip install --upgrade --break-system-packages \
+RUN pip install --upgrade \
   build \
   ipython \
   mkdocs-material \
@@ -38,8 +38,8 @@ RUN python -m pip install --upgrade --break-system-packages \
   pytest-watch \
   readline
 
-RUN python3 -m pip install pipx && \
-    python3 -m pipx ensurepath
+RUN pip install pipx && \
+    pipx ensurepath
 
 RUN sudo updatedb
 
