@@ -1,0 +1,5 @@
+outs:
+- md5: a0245a25d65d99440da74f8ec8814fbd
+  size: 516820873
+  hash: md5
+  path: mcr_microsoft_com_devcontainers_python_3.11-bookworm.tar.bz2
