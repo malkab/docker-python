@@ -1,0 +1,8 @@
+[core]
+    remote = origin
+    autostage = true
+[cache]
+    dir = /home/malkab/ragnarok/dvc/docker/docker-python
+    type = symlink
+['remote "origin"']
+    url = /home/malkab/ragnarok/dvc/docker/docker-python
