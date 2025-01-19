@@ -87,6 +87,8 @@ RUN python -m pip install --upgrade --break-system-packages \
   pyinstaller \
   pytest \
   pytest-watch \
+  pylint \
+  ruff \
   readline
 
 RUN python3 -m pip install pipx && \

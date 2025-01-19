@@ -23,6 +23,7 @@ run:
 		--name python_test \
 		-v $(shell pwd):$(shell pwd) \
 		--workdir $(shell pwd) \
+		--entrypoint /bin/bash \
 		$(IMAGE_NAME)
 
 # Respaldo a tar.gz de la imagen
