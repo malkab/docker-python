@@ -72,8 +72,6 @@ RUN apt-get -y upgrade && \
 
 RUN ln -s /usr/bin/batcat /usr/bin/bat
 
-RUN updatedb
-
 USER vscode
 
 RUN python -m pip install --upgrade --break-system-packages pip

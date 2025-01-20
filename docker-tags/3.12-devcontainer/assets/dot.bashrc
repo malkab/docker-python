@@ -162,4 +162,4 @@ fshow() {
 }
 
 # fzf
-eval "$(fzf --bash)"
+eval "$(fzf --bash)" &> /dev/null
