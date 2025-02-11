@@ -2,11 +2,12 @@
 BASE_IMAGE_NAME=mcr.microsoft.com/devcontainers/python:3.12-bookworm
 IMAGE_NAME=python:3.12-devcontainer
 IMAGE_SAVE_NAME=python_3_12_devcontainer
+IMAGE_USER=vscode
 
 # Ejecuta la imagen base para depurar
 base_image_run:
 	@docker run -ti --rm \
-		--user vscode:vscode \
+		--user $(IMAGE_USER):$(IMAGE_USER) \
 		-v $(shell pwd):$(shell pwd) \
 		--workdir $(shell pwd) \
 		--entrypoint /bin/bash \
@@ -19,8 +20,7 @@ build:
 # Ejecuta la imagen construída
 run:
 	@docker run -ti --rm \
-		--user vscode:vscode \
-		--name python_test \
+		--user $(IMAGE_USER):$(IMAGE_USER) \
 		-v $(shell pwd):$(shell pwd) \
 		--workdir $(shell pwd) \
 		--entrypoint /bin/bash \
