@@ -1,8 +1,14 @@
 # ¡ATENCIÓN! Esto hay que cambiarlo también en el FROM del Dockerfile
 BASE_IMAGE_NAME=mcr.microsoft.com/devcontainers/python:3.12-bookworm
+IMAGE_USER=vscode
 IMAGE_NAME=python:3.12-devcontainer
 IMAGE_SAVE_NAME=python_3_12_devcontainer
-IMAGE_USER=vscode
+BASE_IMAGE_SAVE_NAME=python_3_12_bookworm
+
+# Push
+PUSH_OWNER=
+PUSH_REGISTRY=
+PUSH_REGISTRY_URL=https://$(PUSH_REGISTRY)
 
 # Ejecuta la imagen base para depurar
 base_image_run:
@@ -26,7 +32,27 @@ run:
 		--entrypoint /bin/bash \
 		$(IMAGE_NAME)
 
+# Subida
+push:
+	-@echo "Subiendo imagen $(IMAGE_NAME) a $(PUSH_REGISTRY_URL), no olvidar hacer primero login"
+
+	-@docker tag \
+		$(IMAGE_NAME) \
+		$(PUSH_REGISTRY)/$(PUSH_OWNER)/$(IMAGE_NAME)
+
+	-@docker push \
+		$(PUSH_REGISTRY)/$(PUSH_OWNER)/$(IMAGE_NAME)
+
 # Respaldo a tar.gz de la imagen
 save:
 	@docker image save $(IMAGE_NAME) $(IMAGE_NAME) | gzip > \
 		$(IMAGE_SAVE_NAME).tar.gz
+
+	@docker image save $(BASE_IMAGE_NAME) $(BASE_IMAGE_NAME) | gzip > \
+		$(BASE_IMAGE_SAVE_NAME).tar.gz
+
+# Eliminar activos
+clean:
+	-@docker image rm $(IMAGE_NAME)
+
+	-@docker image rm $(PUSH_REGISTRY)/$(PUSH_OWNER)/$(IMAGE_NAME)
