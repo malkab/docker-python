@@ -2,6 +2,7 @@ FROM mcr.microsoft.com/devcontainers/python:3.12-bookworm AS build
 
 LABEL author="Juan Pedro Perez"
 LABEL email="jp.perez.alcantara@gmail.com"
+LABEL release_notes="DevContainer base para Python basada en la imagen de Microsoft y en Debian Bookworm."
 
 WORKDIR /
 
@@ -91,8 +92,3 @@ RUN python -m pip install --upgrade --break-system-packages \
 
 RUN python3 -m pip install pipx && \
     python3 -m pipx ensurepath
-
-# Aplanamiento
-FROM scratch
-
-COPY --from=build / /
