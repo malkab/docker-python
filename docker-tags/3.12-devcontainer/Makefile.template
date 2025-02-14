@@ -6,9 +6,7 @@ IMAGE_SAVE_NAME=python_3_12_devcontainer
 BASE_IMAGE_SAVE_NAME=python_3_12_bookworm
 
 # Push
-PUSH_OWNER=
-PUSH_REGISTRY=
-PUSH_REGISTRY_URL=https://$(PUSH_REGISTRY)
+PUSH_REGISTRY=a.registry/a_user
 
 # Ejecuta la imagen base para depurar
 base_image_run:
@@ -34,14 +32,14 @@ run:
 
 # Subida
 push:
-	-@echo "Subiendo imagen $(IMAGE_NAME) a $(PUSH_REGISTRY_URL), no olvidar hacer primero login"
+	-@echo "Subiendo imagen $(PUSH_REGISTRY)/$(IMAGE_NAME), no olvidar hacer primero login"
 
 	-@docker tag \
 		$(IMAGE_NAME) \
-		$(PUSH_REGISTRY)/$(PUSH_OWNER)/$(IMAGE_NAME)
+		$(PUSH_REGISTRY)/$(IMAGE_NAME)
 
 	-@docker push \
-		$(PUSH_REGISTRY)/$(PUSH_OWNER)/$(IMAGE_NAME)
+		$(PUSH_REGISTRY)/$(IMAGE_NAME)
 
 # Respaldo a tar.gz de la imagen
 save:
@@ -55,4 +53,4 @@ save:
 clean:
 	-@docker image rm $(IMAGE_NAME)
 
-	-@docker image rm $(PUSH_REGISTRY)/$(PUSH_OWNER)/$(IMAGE_NAME)
+	-@docker image rm $(PUSH_REGISTRY)/$(IMAGE_NAME)
